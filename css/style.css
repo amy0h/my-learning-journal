@@ -1,0 +1,136 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Source Sans 3', sans-serif;
+    min-height: 100vh;
+}
+
+.hero-post img, .blog-post img {
+    display: block;
+    width: 100%
+}
+
+/* Header and navigation */
+
+header {
+    height: 59px;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    padding: 1.063em 1.53em 1.438em 1.25em;
+}
+
+.logo-img { margin-right: .2em; }
+
+.header-title {
+    font-family: 'roboto', sans-serif;
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: #0E0E0E;
+}
+
+.header-title, .nav-home, .nav-about {
+    align-self: center;
+}
+
+.nav-home, .nav-about {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: #090909;
+}
+
+.nav-about {
+    margin-left: 2.8em;
+}
+
+/* Hero section */
+
+.hero-post{
+    height: 414px;
+    background-image: url("../images/blog-image-hero.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.5em;
+    padding: 5.438em 1.25em 1.563em 1.25em;
+}
+
+.hero-date {
+    font-size: 0.75rem;
+}
+
+.hero-title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 108.2%;
+    --letter-spacing: calc(-0.003 * 2rem);
+    letter-spacing: var(--letter-spacing);
+}
+
+.hero-desc {
+    line-height: 130%;
+}
+
+/* Blog section */
+
+.blog-section {
+    padding: 2.125em 1.25em 1.69em 1.25em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 2.56em;
+}
+
+.blog-post {
+    display: grid;
+    gap: .875em;
+}
+
+
+.blog-date {
+    font-size: 0.919rem;
+}
+
+.blog-title {
+    font-size: 1.5rem;;
+    font-weight: bold;
+    line-height: 108.2%;
+}
+
+.blog-content {
+    line-height: 125%;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #202020;
+    color: #ECECEC;
+    font-weight: 700;
+    height: 105px;
+    font-size: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyright {
+    color: #D7D7D7;
+    font-weight: 400;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
