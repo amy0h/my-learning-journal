@@ -17,6 +17,18 @@ body {
     width: 100%
 }
 
+.bold {
+    font-weight: 700;;
+}
+
+a {
+    text-decoration: none;
+}
+
+.align-center {
+    text-align: center;;
+}
+
 /* Header and navigation */
 
 header {
@@ -30,7 +42,6 @@ header {
 
 .header-title {
     font-family: 'roboto', sans-serif;
-    font-weight: bold;
     font-size: 0.85rem;
     color: #0E0E0E;
 }
@@ -40,7 +51,6 @@ header {
 }
 
 .nav-home, .nav-about {
-    text-decoration: none;
     font-weight: 600;
     font-size: 0.75rem;
     color: #090909;
@@ -53,7 +63,6 @@ header {
 /* Hero section */
 
 .hero-post{
-    height: 414px;
     background-image: url("../images/blog-image-hero.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -61,7 +70,7 @@ header {
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
-
+    justify-content: flex-end;
     gap: 0.5em;
     padding: 5.438em 1.25em 1.563em 1.25em;
 }
@@ -72,10 +81,10 @@ header {
 
 .hero-title {
     font-size: 2rem;
-    font-weight: 700;
     line-height: 108.2%;
     --letter-spacing: calc(-0.003 * 2rem);
     letter-spacing: var(--letter-spacing);
+    color: inherit;
 }
 
 .hero-desc {
@@ -103,7 +112,6 @@ header {
 
 .blog-title {
     font-size: 1.5rem;;
-    font-weight: bold;
     line-height: 108.2%;
 }
 
@@ -111,13 +119,17 @@ header {
     line-height: 125%;
 }
 
+.view-more {
+    text-decoration: underline;
+    padding-bottom: 2.6875em;
+    cursor: pointer;
+}
 
 /* Footer */
 
 footer {
     background-color: #202020;
     color: #ECECEC;
-    font-weight: 700;
     height: 105px;
     font-size: 0.75rem;
     display: flex;
@@ -133,4 +145,37 @@ footer {
 
 .uppercase {
     text-transform: uppercase;
+}
+
+
+/* About page */
+
+.post-container {
+    padding: 1.625em 1.25em 0 1.25em;
+}
+
+.post-desc {
+    padding-bottom: 2rem;
+    background-image: none;
+}
+
+.post-content-container {
+    display: grid;
+    gap: 1.25rem;
+    margin: 1.215em 0 1.25rem 0;
+}
+
+.profile-img {
+    width: 30%;
+    margin: auto;
+}
+
+.recent-posts {
+    padding-top: 1.5625em;
+}
+
+.post {
+    background-image: none;
+    color: #151515;
+    padding: 0.75em 0 0 0;
 }
