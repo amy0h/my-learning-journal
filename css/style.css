@@ -7,26 +7,19 @@
     padding: 0;
 }
 
+:root {
+    --padding-side: 1.25rem;
+  }
+
 body {
     font-family: 'Source Sans 3', sans-serif;
-    min-height: 100vh;
 }
+
+main { background-color: #FAFAFA; }
 
 .hero-post img, .blog-post img {
     display: block;
     width: 100%
-}
-
-.bold {
-    font-weight: 700;;
-}
-
-a {
-    text-decoration: none;
-}
-
-.align-center {
-    text-align: center;;
 }
 
 /* Header and navigation */
@@ -41,18 +34,18 @@ header {
 .logo-img { margin-right: .2em; }
 
 .header-title {
-    font-family: 'roboto', sans-serif;
-    font-size: 0.85rem;
-    color: #0E0E0E;
+    font-family: 'roboto', sans-serif !important;
+    font-size: .85rem !important;
+    color: #0E0E0E !important;
 }
 
-.header-title, .nav-home, .nav-about {
+.logo-img, .header-title, .nav-home, .nav-about {
     align-self: center;
 }
 
 .nav-home, .nav-about {
     font-weight: 600;
-    font-size: 0.75rem;
+    font-size: 0.75rem !important;
     color: #090909;
 }
 
@@ -72,12 +65,11 @@ header {
     flex-direction: column;
     justify-content: flex-end;
     gap: 0.5em;
-    padding: 5.438em 1.25em 1.563em 1.25em;
+    padding: 5.438em var(--padding-side) 1.563em var(--padding-side);
+    min-height: 293px;
 }
 
-.hero-date {
-    font-size: 0.75rem;
-}
+.hero-date { font-size: 0.75rem; }
 
 .hero-title {
     font-size: 2rem;
@@ -87,14 +79,12 @@ header {
     color: inherit;
 }
 
-.hero-desc {
-    line-height: 130%;
-}
+.hero-desc { line-height: 130%;}
 
 /* Blog section */
 
 .blog-section {
-    padding: 2.125em 1.25em 1.69em 1.25em;
+    padding: 2.125em var(--padding-side) 1.69em var(--padding-side);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 2.56em;
@@ -105,18 +95,17 @@ header {
     gap: .875em;
 }
 
-
-.blog-date {
-    font-size: 0.919rem;
-}
+.blog-date { font-size: 0.919rem; }
 
 .blog-title {
     font-size: 1.5rem;;
     line-height: 108.2%;
+    color: #141414;
 }
 
 .blog-content {
     line-height: 125%;
+    color: #505050;
 }
 
 .view-more {
@@ -143,20 +132,11 @@ footer {
     font-weight: 400;
 }
 
-.uppercase {
-    text-transform: uppercase;
-}
-
-
-/* About page */
+/* Shared by About and Post page */
 
 .post-container {
-    padding: 1.625em 1.25em 0 1.25em;
-}
-
-.post-desc {
-    padding-bottom: 2rem;
-    background-image: none;
+    padding: 1.625em var(--padding-side) 0 var(--padding-side);
+    color: #151515;
 }
 
 .post-content-container {
@@ -165,17 +145,114 @@ footer {
     margin: 1.215em 0 1.25rem 0;
 }
 
-.profile-img {
-    width: 30%;
-    margin: auto;
-}
-
 .recent-posts {
     padding-top: 1.5625em;
 }
 
+.extra-padding {
+    padding-bottom: 3.5em;
+}
+
+/* About page */
+
+.profile-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+/* Post page */
+
 .post {
     background-image: none;
     color: #151515;
-    padding: 0.75em 0 0 0;
+    padding: 0.75em 0 1em 0;
+}
+
+.post-desc, .profile-desc {
+    padding-bottom: 2rem;
+    background-image: none;
+}
+
+/* Shared classes */
+
+.bold {
+    font-weight: 700;;
+}
+
+a {
+    text-decoration: none;
+}
+
+.align-center {
+    text-align: center;;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+@media (min-width:700px ) {
+
+    .header-title {
+        font-size: 1rem !important;
+    }
+    
+    .nav-home, .nav-about {
+        font-size: 0.9rem !important;
+    }
+}
+
+
+@media (min-width: 1000px) {
+    
+    :root {
+        --padding-side: 3.25rem;
+        --padding-side-secondary: 5.75rem
+      }
+    
+    header {
+        height: 83px;
+    }
+
+    .hero-post {
+        min-height: 488px;
+        padding-bottom: 3.704em;
+    }
+
+    .blog-section {
+        padding-top: 3.1875em;
+    }
+
+    .post-container {
+        padding-top: 4.44em;
+        padding-bottom: 4.44em;
+    }
+
+    .post-content-container,
+    .post-date, .post-title, .post-desc  {
+        padding-left: var(--padding-side-secondary);
+        padding-right: var(--padding-side-secondary);
+    }
+
+    .profile-container {
+        display: grid;
+        grid-template-areas:
+            "img title"
+            "img desc";
+        align-items: start;
+        padding-bottom: 3em;
+    }
+    
+    .profile-img {
+        grid-area: img;
+        margin-right: 2em;
+      }
+    
+}
+
+@media (min-width: 1200px) {
+    :root {
+        --padding-side: 9.25rem;
+    }
 }
